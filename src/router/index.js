@@ -24,11 +24,15 @@ const routes = [
       {
         name: 'Article',
         path: 'article/:id?',
-        component: article
+        // 箭头模式，又称函数模式，可以传递params，也可以传递query
+        props: (route) => ({ id : route.params.id }),
+        component: article,
       },
       {
         name: 'News',
         path: 'news/:id?',
+        // 开启布尔模式传递参数。不使用router传递参数，使得页面与页面之间解耦
+        props: (route) => ({ id : route.query.id }),
         component: news
       }
     ]
