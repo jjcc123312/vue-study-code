@@ -1,99 +1,43 @@
 <template>
   <div id="app">
-    <div class="layout">
-      <Layout :style="{minHeight: '100vh'}">
-        <Sider collapsible :collapsed-width="78" v-model="isCollapsed">
-          <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses">
-            <MenuItem name="1-1">
-              <Icon type="ios-navigate"></Icon>
-<!--              <span><h1><router-link :to="{ name: 'Home' }">主页</router-link></h1></span>-->
-              <span><button @click="toHome">主页</button></span>
-            </MenuItem>
-            <MenuItem name="1-2">
-              <Icon type="search"></Icon>
-<!--              <span><h1><router-link :to="{ name: 'About' }">其它</router-link></h1></span>-->
-              <span><h1><button @click="toAbout">其它</button></h1></span>
-            </MenuItem>
-          </Menu>
-        </Sider>
-        <Layout>
-          <Header :style="{background: '#fff', boxShadow: '0 2px 3px 2px rgba(0,0,0,.1)'}"></Header>
-          <Content :style="{padding: '0 16px 16px'}">
-            <Breadcrumb :style="{margin: '16px 0'}">
-              <BreadcrumbItem>Home</BreadcrumbItem>
-              <BreadcrumbItem>Components</BreadcrumbItem>
-              <BreadcrumbItem>Layout</BreadcrumbItem>
-            </Breadcrumb>
-            <Card>
-              <router-view></router-view>
-            </Card>
-          </Content>
-        </Layout>
-      </Layout>
-    </div>
+<!--    <vuex-cpn1 />-->
+<!--    <vuex-cpn2 />-->
+<!--    <vuex-cpn3 />-->
+<!--      <hr>-->
+<!--    <vuex-cpn4 />-->
+<!--      <hr>-->
+<!--    <vuex-cpn5 />-->
+      <AxiosCpn1 />
+      <hr>
+      <AxiosCpn2/>
+      <hr>
+      <axios-cpn3/>
   </div>
 </template>
 
-<style lang="scss">
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
-  .layout-con{
-    height: 100%;
-    width: 100%;
-  }
-  .menu-item span{
-    display: inline-block;
-    overflow: hidden;
-    width: 69px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    vertical-align: bottom;
-    transition: width .2s ease .2s;
-  }
-  .menu-item i{
-    transform: translateX(0px);
-    transition: font-size .2s ease, transform .2s ease;
-    vertical-align: middle;
-    font-size: 16px;
-  }
-  .collapsed-menu span{
-    width: 0px;
-    transition: width .2s ease;
-  }
-  .collapsed-menu i{
-    transform: translateX(5px);
-    transition: font-size .2s ease .2s, transform .2s ease .2s;
-    vertical-align: middle;
-    font-size: 22px;
-  }
-</style>
 <script>
-  export default {
-    data () {
-      return {
-        isCollapsed: false
-      };
-    },
-    computed: {
-      menuitemClasses: function () {
-        return [
-          'menu-item',
-          this.isCollapsed ? 'collapsed-menu' : ''
-        ]
-      }
-    },
-    methods: {
-      toHome() {
-        this.$router.push('/home')
-      },
-      toAbout() {
-        this.$router.push('/about')
-      }
-    }
+import VuexCpn1 from './components/VuexCpn1'
+import VuexCpn2 from './components/VuexCpn2'
+import VuexCpn3 from './components/VuexCpn3'
+import VuexCpn4 from './components/VuexCpn4'
+import VuexCpn5 from './components/VuexCpn5'
+import AxiosCpn1 from './components/AxiosCpn1'
+import AxiosCpn2 from './components/AxiosCpn2'
+import AxiosCpn3 from './components/AxiosCpn3'
+
+export default {
+  components: {
+    VuexCpn1, VuexCpn2, VuexCpn3, VuexCpn4, VuexCpn5, AxiosCpn1, AxiosCpn2, AxiosCpn3
+  },
+  data () {
+    return {
+    };
+  },
+  computed: {
+
+  },
+  methods: {
+
   }
+}
 </script>
