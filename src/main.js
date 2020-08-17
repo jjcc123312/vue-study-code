@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  // 将创建的vuex实例对象store加入vue实例
   store,
   render: h => h(App)
 }).$mount('#app')
